@@ -1,3 +1,4 @@
+<?php include_once 'connect.php';?>
 <thtml>
     <head>
         <style>
@@ -20,15 +21,14 @@
                 padding: 15px;
                 text-align: center;
                 background-color: dodgerblue;
-            }
-            
+            }            
         </style>
     </head>
     <body>
         <h1>Alternativ Facebook</h1><br>
         <div class="buttons">
-            <button id="login"><a href="login.php">Login</a></button>
-            <button id="registration"><a href="registration.php">Registration</a></button>
+            <button id="login"><a href="view/login.php">Login</a></button>
+            <button id="registration"><a href="view/registration.php">Registration</a></button>
         </div>
     </body>
 </thtml>

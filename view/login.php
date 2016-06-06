@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <style>
@@ -25,14 +27,17 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form>
+        <form method="POST" action="../controller/isuserc.php" class="form">
             <fieldset class="form-group">
-                <label>Username:</label>
-                <input type="text" name='uname'>
+                <label>Email:</label>
+                <input type="text" name='email'>
             </fieldset>
             <fieldset class="form-group">
                 <label>Password:</label>
                 <input type="password" name='passw'>
+            </fieldset>
+            <fieldset class="form-group">
+                <input type="submit" name="submit" value="Login">
             </fieldset>
         </form>
     </body>
