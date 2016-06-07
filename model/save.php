@@ -1,7 +1,7 @@
-<?php//model
+<?php
 include_once '../connect.php';
 global $conn;
-
+//model
 function add($obj) {
     global $conn;
     $uname = $obj["name"];
@@ -16,7 +16,6 @@ function add($obj) {
     $res = query($add);
     return $res;
 }
-
 function edit($obj) {
     global $conn;
     $uname = $obj["name"];

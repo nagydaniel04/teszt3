@@ -1,9 +1,16 @@
-<?php//controller
+<?php
 include '../model/save.php';
-$ok=add($_POST);
-echo 'Succes';
 include '../view/registration.php';
-
-
-
+if($_POST){
+    $ok=add($_POST);
+    if($ok){
+        echo 'Succes';
+        //controller
+        $url='../controller/login.php';
+        header('Location: '.$url);
+    }
+    else{
+        include '../view/registration';
+    }
+}
 

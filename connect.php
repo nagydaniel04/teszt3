@@ -10,7 +10,7 @@ if (!$conn) {
 global $conn;
 function query($query){
     global $conn;
-    $result= mysqli_query($conn, $query);
+    $result=mysqli_query($conn, $query);
     if($result==false){
         $error="Cannot execute query: <br>";
         $error.=$query."<br>";
