@@ -25,7 +25,7 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form method="POST" action="../controller/login.php" class="form">
+        <form class="form" method="POST" action="../controller/login.php" class="form">
             <fieldset class="form-group">
                 <label>Email:</label>
                 <input type="text" name='email'>

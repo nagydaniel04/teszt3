@@ -37,6 +37,14 @@
                 width: 69%;                
             }
         </style>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $(".datepicker").datepicker();
+            });
+        </script>
     </head>
     <body>
         <h1>Registration</h1>
@@ -73,7 +81,7 @@
                     </fieldset>
                     <fieldset class="form-group">
                         <label>Birthday:</label>
-                        <input type="text" name="birthday"><br>
+                        <input type="text" class="datepicker" name="birthday"><br>
                     </fieldset>
                     <fieldset class="form-group">
                         <label>Password:</label>

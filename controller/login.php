@@ -1,4 +1,7 @@
 <?php
+if(isset($_GET["re"])==1){    
+    echo '<h3> Incorrect Email or Password <h3>';
+}
 include '../model/isuser.php';
 include '../view/login.php';
 if($_POST){
@@ -14,7 +17,7 @@ if($_POST){
         header('Location: '.$newURL);
     }
     else{
-        echo '<h3> Incorrect Email or Password <h3>';
-        include '../view/login.php';
+        $re=1;
+        header("Refresh:1; url=login.php?re=1;");
     }
 }
