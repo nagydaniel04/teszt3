@@ -9,6 +9,12 @@
             form{
                 text-align: center;
             }
+            .from{
+                color: blue;
+            }
+            .to{
+                color:darkgray;
+            }
         </style>
     </head>
     <body>

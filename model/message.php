@@ -17,10 +17,15 @@ function insertinmessage($from, $to,$mess){
     return $result;
 }
 function messagelist($from,$to){
-    $sql="SELECT * FROM message WHERE from_email='$from' AND to_email='$to'";
+    $sql="SELECT * FROM message WHERE from_email='$from' AND to_email='$to' OR from_email='$to' AND to_email='$from'";
     $messages=query($sql);
     while ($row= mysqli_fetch_array($messages)){
-        echo $row["from_email"].'->'.$row["to_email"].'  :  '.$row["messages"]; ?><br><?php
+        if($row["from_email"]==$from){
+            echo '<nobr><label class="from">'.$row["from_email"].':</label><label> '.$row["messages"].'</label></nobr>'; ?><br><?php
+        }
+        else {
+            echo '<nobr><label class="to">'.$row["from_email"].':</label> <label> '.$row["messages"].'</label></nobr>'; ?><br><?php
+        }
     }
     //return $messages;            
 }
