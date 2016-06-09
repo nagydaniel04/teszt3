@@ -1,4 +1,7 @@
-<?php include_once '../controller/save.php';?>
+<?php 
+include_once '../controller/save.php';
+include_once '../controller/grouplist.php';
+?>
 <html>
     <head>
         <style>
@@ -59,6 +62,20 @@
                 $(".datepicker").datepicker();
             });
         </script>
+        <script>
+            $(document).ready(function () {
+                $("#addbutton").click(function (event) {
+                    $.ajax({
+                        url: "../controller/grouplist.php",
+                        method: "POST",
+                        data: {group: $("#addgroup").val(), xaction: "addnewgroup"}
+                    }).success(function (result) {
+                        $("#groups").append(result);
+                    });
+                    event.preventDefault();
+                });
+            });
+        </script>
     </head>
     <body>
         <h1>Registration</h1>
@@ -107,9 +124,13 @@
                         <input type="password" name='repassw'><br>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label>Groups:</label><br>
-                        <input type="checkbox" name="group[]"><br>
-                    </fieldset>            
+                        <h3>Groups:</h3>
+                        <spam id="groups"><?php grouplist(); ?></spam>
+                        <label>Add group:</label><br>
+                        <input type="text" id="addgroup" class="a" name="addgroup">
+                        <button id="addbutton">Add group</button>
+                        <br>                        
+                    </fieldset>          
                     <fieldset class="form-group">
                         <input type="submit">
                     </fieldset>
