@@ -27,4 +27,10 @@ function edit($obj) {
     $edit = "UPDATE `users` SET `name`='$name',`email`='$email',`country_id`='$country_id',`county_id`='$county_id',`birthday`='$birthday',`password`='$pass'";
     $res = query($edit);
 }
+function country(){
+    global $conn;
+    $sql="SELECT id,name FROM country";
+    $query=  query($sql);
+    return $query;
+}
 

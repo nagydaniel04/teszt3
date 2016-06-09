@@ -7,6 +7,7 @@ if(isset($_GET["id"])){
     $idg=$_GET["id"];
     $to_email=messageto($idg);
     include '../view/message.php';
+    messagelist($from_email, $to_email["email"]);
 }
 if(isset($_POST)&&!isset($_GET["id"])){
     $idp=$_POST["id"];

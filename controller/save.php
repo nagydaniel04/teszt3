@@ -23,4 +23,12 @@ if($_POST){
          header("Refresh:1 ; save.php?re=1");
     }
 }
+function countries(){
+    $countries=country();
+    foreach ($countries as $val){
+    ?>
+        <option name="country_id" value="<?php echo $val["id"]; ?>"><?php echo $val["name"]; ?></option>
+    <?php
+    }
+}
 
