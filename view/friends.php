@@ -1,4 +1,3 @@
-
 <html>
     <head>
         <style>
@@ -20,18 +19,18 @@
     </head>
     <body>
        <h1>Welcome <?php echo $name; ?></h1>
-       <a href="../controller/friends.php" >Friends messages</a><br>
+       <a href="../controller/userlist.php" >All users</a><br>
         <table>
             <tr>
                 <th>Name</th>
                 <th>Message</th>
             </tr>
         <?php
-        if(!$namelist){
+        if(!$namelistf){
             echo '<p>No users</p>';
         }
         else{
-            foreach($namelist as $val){
+            foreach($namelistf as $val){
                 ?>
                 <tr>
                     <td>

@@ -9,7 +9,7 @@ function name($mail){
         return $val["name"];
     }         
 }
-function namelist($mail){
+function namelist($mail){    
     $sql="SELECT id,name, email FROM users";
     $res=query($sql);  
     $namelist=array();

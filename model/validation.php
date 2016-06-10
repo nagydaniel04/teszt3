@@ -9,7 +9,15 @@ function regname($name){
    }
 }
 function regmail($email){
-    if (!empty($email) && strlen($email) < 30 && (filter_var($email, FILTER_VALIDATE_EMAIL) === true)){
+    $sql="SELECT email FROM users WHERE email='$email'";
+    $q= query($sql);
+    if($q){
+        $ok=1;
+    }
+    else{
+        $ok=0;
+    }
+    if ($ok && !empty($email) && strlen($email) < 30 && (!filter_var($email, FILTER_VALIDATE_EMAIL) === false)){
        return 1;
     }
  else{
@@ -24,4 +32,28 @@ function regpass($pass,$repass){
         return 0;
     }
 }
+function regcountry($country){
+    if(!empty($country)){
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+function regcounty($county){
+    if(!empty($county)){
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+//function reg(){
+//    if(){
+//        return 1;
+//    }
+//    else {
+//        return 0;
+//    }
+//}
 
