@@ -18,7 +18,8 @@
         </style>
     </head>
     <body>
-        <h1><?php echo $to_email["name"]; ?></h1>
+        <h1><img src="../<?php echo $to_email["image"]; ?>"style="width: 150px; height: 150px"><?php echo $to_email["name"]; ?></h1>
+        <p><a href="../controller/userlist.php">Back to list</a></p>
         <form method="POST" action="../controller/message.php">
             <input type="hidden" name="email" value="<?php echo $to_email["email"]; ?>">
             <input type="hidden" name="id" value="<?php echo $to_email["id"]; ?>">

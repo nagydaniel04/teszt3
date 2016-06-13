@@ -3,7 +3,7 @@ include '../connect.php';
 global $conn;
 //model
 function messageto($id){
-    $sql="SELECT email,name,id FROM users WHERE id='$id'";
+    $sql="SELECT email,name,id,image FROM users WHERE id='$id'";
     $result=query($sql);
     foreach ($result as $val){
         return $val;

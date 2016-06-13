@@ -79,13 +79,14 @@ include_once '../controller/grouplist.php';
     </head>
     <body>
         <h1>Registration</h1>
-        <form method="POST" action="../controller/save.php" class="form">
+        <a style="text-align: right;" href="../controller/login.php">Login</a>
+        <form method="POST" action="../controller/save.php" class="form" enctype="multipart/form-data">
             <div class="warp">
                 <div class="left">
                     <fieldset class="form-group">
                         <input type="hidden">
                         <label>Profile picture:</label><br>
-                        <input type="file">
+                        <input type="file" name="fileToUpload" id="fileToUpload">
                         <img>
                     </fieldset>
                 </div>

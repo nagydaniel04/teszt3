@@ -16,11 +16,15 @@
                 padding: 8px;
             }
             tr:nth-child(even){background-color: #f2f2f2}
+            #logout{
+                text-align: right;
+            }
         </style>
     </head>
     <body>
-       <h1>Welcome <?php echo $name; ?></h1>
-       <a href="../controller/friends.php" >Friends messages</a><br>
+        <h1><img src="../<?php echo $image; ?>" style="width: 150px; height: 150px;">Welcome <?php echo $name; ?></h1>
+       <a href="../controller/friends.php" >Friends messages</a>
+       <p id="logout"><a  href="../controller/login.php?log=1">Log out</a></p><br>
         <table>
             <tr>
                 <th>Name</th>

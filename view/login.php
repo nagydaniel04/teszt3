@@ -25,6 +25,7 @@
     </head>
     <body>
         <h1>Login</h1>
+        <a style="text-align: right;" href="../controller/save.php">Registration</a>
         <form class="form" method="POST" action="../controller/login.php" class="form">
             <fieldset class="form-group">
                 <label>Email:</label>

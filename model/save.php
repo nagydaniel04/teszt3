@@ -1,7 +1,21 @@
 <?php
 include_once '../connect.php';
+include '../controller/image.php';
 global $conn;
 //model
+function singlerow($emailaddress,$groupid){
+    global $conn;
+    $sql="SELECT email FROM ug WHERE email='$emailaddress' && gid='$groupid' ";
+    $query=query($sql);
+    foreach ($query as $val){
+        if($val){
+            return 1;//ha benne van
+        }
+        else{
+            return 0;//ha nincs benne
+        }
+    }
+}
 function add($obj) {
     global $conn;
     $uname = $obj["name"];
@@ -10,10 +24,18 @@ function add($obj) {
     $county_id = $obj["county"];
     $birthday = $obj["birthday"];
     $pass = $obj["passw"];
+    $image=  image();
+    $groups=$_POST["group"];
     //add
-    $add = "INSERT INTO `users`(`name`, `email`, `country_id`, `county_id`, `birthday`, `password`) "
-            . "VALUES ('$uname','$email','$country_id','$county_id','$birthday','$pass')";
+    $add = "INSERT INTO `users`(`name`, `email`, `country_id`, `county_id`, `birthday`, `password`,image) "
+            . "VALUES ('$uname','$email','$country_id','$county_id','$birthday','$pass','$image')";
     $res = query($add);
+    foreach ($groups as $val){
+        if(!singlerow($email,$val)){
+            $sql="INSERT INTO ug(email,gid) VALUES('$email','$val')";
+            $query=query($sql);
+        }
+    }
     return $res;
 }
 function edit($obj) {

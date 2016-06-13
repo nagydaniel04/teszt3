@@ -25,3 +25,10 @@ function namelist($mail){
         return 0;
     }
 }
+function currentimage($mail){
+    $image="SELECT image FROM users WHERE email='$mail'";
+    $query=query($image);
+    foreach($query as $val){
+        return $val["image"];
+    }  
+}
