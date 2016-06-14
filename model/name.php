@@ -2,19 +2,19 @@
 include_once '../connect.php';
 global $conn;
 //model
-function name($mail){
-    $name="SELECT name FROM users WHERE email='$mail'";
+function name($id){
+    $name="SELECT name FROM users WHERE id='$id'";
     $res=query($name);
     foreach($res as $val){
         return $val["name"];
     }         
 }
-function namelist($mail){    
+function namelist($id){    
     $sql="SELECT id,name, email FROM users";
     $res=query($sql);  
     $namelist=array();
     foreach($res as $value){
-        if($mail!=$value["email"]){
+        if($id!=$value["id"]){
             $namelist[]=$value;
         }
     }    
@@ -25,8 +25,8 @@ function namelist($mail){
         return 0;
     }
 }
-function currentimage($mail){
-    $image="SELECT image FROM users WHERE email='$mail'";
+function currentimage($id){
+    $image="SELECT image FROM users WHERE id='$id'";
     $query=query($image);
     foreach($query as $val){
         return $val["image"];

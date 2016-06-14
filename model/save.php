@@ -3,9 +3,9 @@ include_once '../connect.php';
 include '../controller/image.php';
 global $conn;
 //model
-function singlerow($emailaddress,$groupid){
+function singlerow($uid,$groupid){
     global $conn;
-    $sql="SELECT email FROM ug WHERE email='$emailaddress' && gid='$groupid' ";
+    $sql="SELECT uid FROM ug WHERE uid='$uid' && gid='$groupid' ";
     $query=query($sql);
     foreach ($query as $val){
         if($val){
@@ -31,8 +31,9 @@ function add($obj) {
             . "VALUES ('$uname','$email','$country_id','$county_id','$birthday','$pass','$image')";
     $res = query($add);
     foreach ($groups as $val){
-        if(!singlerow($email,$val)){
-            $sql="INSERT INTO ug(email,gid) VALUES('$email','$val')";
+        $uid=mysqli_insert_id($conn);
+        if(!singlerow($uid,$val)){
+            $sql="INSERT INTO ug(uid,gid) VALUES('$uid','$val')";
             $query=query($sql);
         }
     }

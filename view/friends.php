@@ -41,7 +41,7 @@
                     echo $val["name"];
                     ?>
                     </td>
-                    <td><button value=""><a href="../controller/message.php?id=<?php echo $val["id"]; ?>">Send Message</a></button></td>
+                    <td><button value=""><a href="../controller/messageid.php?id=<?php echo $val["id"]; ?>">Send Message</a></button></td>
                 </tr>
                 <?php
             }

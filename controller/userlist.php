@@ -1,10 +1,10 @@
 <?php
 session_start();
 include '../model/name.php';
-$email=$_SESSION["newsession"];
-$image=currentimage($email);
-$name=name($email);
-$namelist=namelist($email);
+$id=$_SESSION["newsession"];
+$image=currentimage($id);
+$name=name($id);
+$namelist=namelist($id);
 if($name){
 //controller
     include '../view/userlist.php';

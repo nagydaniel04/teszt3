@@ -10,12 +10,10 @@ include '../view/login.php';
 if($_POST){
     global $conn;
     //controller
-    $ok=isuser($_POST["email"], $_POST["passw"]);
-    if($ok){
+    $id=isuser($_POST["email"], $_POST["passw"]);
+    if($id){
         session_start();
-        var_dump($_POST["email"]);
-        $_SESSION["newsession"]=$_POST["email"];
-        var_dump($_SESSION);
+        $_SESSION["newsession"]=$id;
         $newURL='../controller/userlist.php';
         header('Location: '.$newURL);
     }

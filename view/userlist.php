@@ -23,7 +23,7 @@
     </head>
     <body>
         <h1><img src="../<?php echo $image; ?>" style="width: 150px; height: 150px;">Welcome <?php echo $name; ?></h1>
-       <a href="../controller/friends.php" >Friends messages</a>
+       <a href="../controller/friendid.php" >Friends messages</a>
        <p id="logout"><a  href="../controller/login.php?log=1">Log out</a></p><br>
         <table>
             <tr>
@@ -43,7 +43,7 @@
                     echo $val["name"];
                     ?>
                     </td>
-                    <td><button value=""><a href="../controller/message.php?id=<?php echo $val["id"]; ?>">Send Message</a></button></td>
+                    <td><button value=""><a href="../controller/messageid.php?id=<?php echo $val["id"]; ?>">Send Message</a></button></td>
                 </tr>
                 <?php
             }

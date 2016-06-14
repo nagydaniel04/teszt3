@@ -18,5 +18,3 @@ if(isset($_POST)&&!isset($_GET["id"])){
     include '../view/message.php';
     messagelist($from_email, $toe);
 }
-
-   
