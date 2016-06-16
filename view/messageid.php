@@ -38,7 +38,7 @@
         </style>
     </head>
     <body>
-        <h1><img src="../<?php echo $to["image"]; ?>"style="width: 150px; height: 150px"><?php echo $to["name"]; ?></h1>
+        <h1><img src="../<?php echo $to["image"]; ?>"style="width: 150px; height: 150px;"><?php echo $to["name"]; ?></h1>
         <p><a href="../controller/userlist.php">Back to list</a></p>
         <form method="POST" action="../controller/messageid.php">
             <input type="hidden" name="id" value="<?php echo $to["id"]; ?>">

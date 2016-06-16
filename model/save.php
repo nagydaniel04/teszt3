@@ -23,7 +23,7 @@ function add($obj) {
     $country_id = $obj["country"];
     $county_id = $obj["county"];
     $birthday = $obj["birthday"];
-    $pass = $obj["passw"];
+    $pass = password_hash($obj["passw"], PASSWORD_BCRYPT);
     $image=  image();
     $groups=$_POST["group"];
     //add
@@ -46,7 +46,7 @@ function edit($obj) {
     $country_id = $obj["country"];
     $county_id = $obj["county"];
     $birthday = $obj["birthday"];
-    $pass = $obj["passw"];    
+    $pass = password_hash($obj["passw"], PASSWORD_BCRYPT);    
     $edit = "UPDATE `users` SET `name`='$name',`email`='$email',`country_id`='$country_id',`county_id`='$county_id',`birthday`='$birthday',`password`='$pass'";
     $res = query($edit);
 }
