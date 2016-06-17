@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <style>
             h1{
                 border: 35px solid lightcyan; 

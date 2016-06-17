@@ -1,6 +1,12 @@
-<?php include_once 'connect.php';?>
-<thtml>
+<?php 
+ini_set("log_errors", 1);
+ini_set("error_log", "php-error.log");
+error_log( "Hello, errors!" );
+include_once 'connect.php';
+?>
+<html>
     <head>
+        <meta charset="UTF-8">
         <style>
             h1{
                 border: 35px solid lightcyan; 
@@ -31,4 +37,4 @@
             <button id="registration"><a href="controller/save.php">Registration</a></button>
         </div>
     </body>
-</thtml>
+</html>

@@ -3,6 +3,7 @@ include_once '../controller/edit.php';
 include_once '../controller/grouplist.php';
 ?>
 <html>
+    <meta charset="UTF-8">
     <head>
         <style>
             h1{                

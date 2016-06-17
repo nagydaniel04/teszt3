@@ -1,6 +1,21 @@
 <?php
 if(isset($_GET["re"])==1){
     echo '<h3>Failed</h3>';
+//    if(isset($okname)==0){
+//        echo '<h4>The name is incorrect<h4>';
+//    }
+//    if(isset($okmail)==0){
+//        echo '<h4>The email is incorrect<h4>';
+//    }
+//    if(isset($okpass)==0){
+//        echo '<h4>The password or password again is incorrect<h4>';
+//    }
+//    if(isset($okcountry)==0){
+//        echo '<h4>The country is incorrect<h4>';
+//    }
+//    if(isset($okcounty)==0){
+//        echo '<h4>The county is incorrect<h4>';
+//    }
 }
 include '../model/save.php';
 include '../model/validation.php';

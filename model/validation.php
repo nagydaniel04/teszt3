@@ -10,14 +10,15 @@ function regname($name){
 }
 function regmail($email){
     $sql="SELECT email FROM users WHERE email='$email'";
-    $q= query($sql);
+    $qu= query($sql);
+    $q=  mysqli_fetch_array($qu);
     if($q){
         $ok=1;
     }
     else{
         $ok=0;
     }
-    if ($ok && !empty($email) && strlen($email) < 30 && (!filter_var($email, FILTER_VALIDATE_EMAIL) === false)){
+    if (!$ok && !empty($email) && strlen($email) < 30 && (!filter_var($email, FILTER_VALIDATE_EMAIL) === false)){
        return 1;
     }
  else{

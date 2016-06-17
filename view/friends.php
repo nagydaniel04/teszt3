@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <style>
              h1{
                 border: 35px solid lightcyan; 
@@ -18,11 +19,22 @@
             #logout{
                 text-align: right;
             }
+            #button1{
+                float:left; 
+            }
+            #button3{
+                float: right; 
+            }
+            #button2{
+                float: right; 
+            }
         </style>
     </head>
     <body>
-       <h1><img src="../<?php echo $image; ?>" style="width: 150px; height: 150px">Welcome <?php echo $name; ?></h1>
-       <a href="../controller/userlist.php" >All users</a><p id="logout"><a  href="../controller/login.php?log=1">Log out</a></p><br>
+        <h1><img src="../<?php echo $image; ?>" style="width: 150px; height: 150px">Welcome <?php echo $name; ?></h1>
+        <button id="button1"><a href="../controller/userlist.php" >All users</a></button>
+        <button id="button3"><a  href="../controller/login.php?log=1">Log out</a></button>
+        <button id="button2"><a  href="../controller/edit.php?id=<?php echo $id;?>">Edit</a></button><br>
         <table>
             <tr>
                 <th>Name</th>
