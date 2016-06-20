@@ -5,6 +5,7 @@ include_once '../controller/grouplist.php';
 <html>
     <meta charset="UTF-8">
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <style>
             h1{                
                 border: 35px solid lightcyan; 

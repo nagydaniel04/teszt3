@@ -7,7 +7,7 @@ if(isset($_POST["group"])&& filter_input(INPUT_POST, "xaction")=="addnewgroup" )
     if($ok){
         foreach ($ok as $val){
             ?>
-            <input type="checkbox" name="group[]" value="<?php echo $val["id"]; ?>">
+            <input type="checkbox" class="roundedTwo" name="group[]" value="<?php echo $val["id"]; ?>">
             <label><?php echo $val["name"]; ?></label><br>
             <?php
         }    
@@ -17,7 +17,7 @@ function grouplist(){
     $groups=groups();
     foreach($groups as $val){
         ?>
-        <input type="checkbox" name="group[]" value="<?php echo $val["id"]; ?>">
+            <input type="checkbox" class="roundedTwo" name="group[]" value="<?php echo $val["id"]; ?>">
         <label><?php echo $val["name"]; ?></label><br>
         <?php
     }

@@ -13,18 +13,22 @@ include_once 'connect.php';
                 background-color: lightcyan;
                 text-align: center;
             }
-            .buttons{
+            .buttons{                
                 text-align: center;
             }
             #login{
-                padding: 15px;
+                border-color: gray;
+                border-radius: 5px;
+                padding: 10px;
                 padding-left: 35px;
                 padding-right: 35px;
                 text-align: center;
                 background-color: greenyellow;
             }
             #registration{
-                padding: 15px;
+                border-color: gray;
+                border-radius: 5px;
+                padding: 10px;
                 text-align: center;
                 background-color: dodgerblue;
             }            

@@ -5,11 +5,16 @@ include_once '../controller/grouplist.php';
 <html>
     <head>
         <meta charset="UTF-8">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
         <style>
+            body{
+                background-color: #fafafa;
+            }
             h1{                
                 border: 35px solid lightcyan; 
                 background-color: lightcyan; 
-                text-align: center;
+                text-align: left;
             }
             .form-group{
                 border: 0px;
@@ -21,12 +26,19 @@ include_once '../controller/grouplist.php';
                 color: grey;
             }
             input,select{
-                border-radius: 5px;
-                border-color:  lightgray;
+                padding: 10px;
+                border-radius: 7px;
+                border-color:#A9A9A9;
             }
             input:focus{
-                border-radius: 3px;
+                border-radius: 5px;
                 border-color: blue;
+                border : 6px;
+            }
+            select:focus{
+                border-radius: 5px;
+                border-color: blue;
+                border : 6px;
             }
             .warp{
                 width: 100%;
@@ -34,12 +46,64 @@ include_once '../controller/grouplist.php';
             .left{
                 float: left;
                 width: 29%;
+                padding-left: 15px;
             }
             .rigth{ 
                 border-left: 3px solid black;
+                padding-left: 15px;
                 float: right;
                 width: 69%;                
             }
+            select:focus{
+                border-radius: 3px;
+                border-color: blue;
+            }
+            .fa-user{
+                font-size: 45px;
+                color: A9A9A9;
+                margin-right: 10px;
+            }
+            .fa-envelope-o{
+                font-size: 40px;
+                color: A9A9A9;
+                margin-right: 10px;
+            }
+            .fa-globe{
+                font-size: 40px;
+                color: A9A9A9;
+                margin-right: 10px;
+            }
+            .fa-camera-retro{
+                font-size: 40px;
+                color: A9A9A9;
+                margin-right: 10px;
+            }
+            .fa-birthday-cake{
+                font-size: 40px;
+                color: A9A9A9;
+                margin-right: 10px;
+            }
+            .fa-map-marker{
+                font-size: 40px;
+                color: A9A9A9;
+                margin-right: 20px;
+            }
+            .fa-lock{
+                font-size: 40px;
+                color: A9A9A9;
+                margin-right: 20px;
+            }
+            .fa-repeat{
+                font-size: 40px;
+                color: A9A9A9;
+                margin-right: 20px;
+            }
+            .fa-users{
+                font-size: 40px;
+                color: A9A9A9;
+                margin-right: 20px;
+            }
+            
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script>
@@ -135,6 +199,31 @@ include_once '../controller/grouplist.php';
                 });
             });
         </script>
+        <script>
+            function onBlur(el) {
+                if (el.value == '') {
+                    el.value = el.defaultValue;
+                }
+            }
+            function onFocus(el) {
+                if (el.value == el.defaultValue) {
+                    el.value = '';
+                }
+            }
+            function makeItPassword()
+            {
+               document.getElementById("passcontainer")
+                  .innerHTML = "<input id=\"password\" name=\"passw\" type=\"password\"/>";
+               document.getElementById("password").focus();
+            }            
+            function makeItrePassword()
+            {
+               document.getElementById("repasscontainer")
+                  .innerHTML = "<input id=\"repassword\" name=\"repassw\" type=\"password\"/>";
+               document.getElementById("repassword").focus();
+            }
+            
+        </script>
     </head>
     <body>
         <h1>Registration</h1>
@@ -144,47 +233,52 @@ include_once '../controller/grouplist.php';
                 <div class="left">
                     <fieldset class="form-group">
                         <input type="hidden">
-                        <label>Profile picture:</label><br>
+                        <i class="fa fa-camera-retro" aria-hidden="true"></i><br>
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <img>
                     </fieldset>
                 </div>
                 <div class="rigth">
                     <fieldset class="form-group">
-                        <label>Name:</label>
-                        <input type="text" name="name" id="name"><br>
+<!--                        <label>Name:</label>-->
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input type="text" name="name" id="name" value="Name" onblur="onBlur(this)" onfocus="onFocus(this)" /><br>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label>Email:</label>
-                        <input type="text" name="email" id="email"><label id="okmail"></label><br>
+                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <input type="text" name="email" id="email" value="Email" onblur="onBlur(this)" onfocus="onFocus(this)" /><label id="okmail"></label><br>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label>Country:</label>
+                        <i class="fa fa-globe" aria-hidden="true"></i>
                         <select name="country" id="country">
                             <option value="default">Choose a country</option>
                             <?php countries(); ?>
                         </select><br>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label>County:</label>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <select name="county" id="county">
                             <option value="default">Choose a county</option>
                         </select><br>
                     </fieldset>
-                    <fieldset class="form-group" id="birthday">
-                        <label>Birthday:</label>
-                        <input type="text" class="datepicker" name="birthday"><br>
+                    <fieldset class="form-group" id="birthday"  >
+                        <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                        <input type="text" class="datepicker" name="birthday" value="Birthday" onblur="onBlur(this)" onfocus="onFocus(this)" /><br>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label>Password:</label>
-                        <input type="password" name="passw" id="passw"><br>
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <span id="passcontainer">
+                            <input type="text" name="passw" onfocus="return makeItPassword()" value="Password" id="passw"><br>
+                        </span>
                     </fieldset>
                     <fieldset class="form-group">
-                        <label>Password again:</label>
-                        <input type="password" name='repassw' id="repassw"><br>
+                        <i class="fa fa-repeat" aria-hidden="true"></i>
+                        <span id="repasscontainer">
+                            <input type="text" name='repassw' onfocus="return makeItrePassword()" value="Password again" id="repassw"><br>
+                        </span>
                     </fieldset>
                     <fieldset class="form-group">
-                        <h3>Groups:</h3>
+                        <i class="fa fa-users" aria-hidden="true"></i><br>
                         <spam id="groups"><?php grouplist(); ?></spam>
                         <label>Add group:</label><br>
                         <input type="text" id="addgroup" class="a" name="addgroup">

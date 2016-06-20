@@ -1,6 +1,7 @@
 
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <meta charset="UTF-8">
         <style>
              h1{
@@ -17,6 +18,11 @@
                 padding: 8px;
             }
             tr:nth-child(even){background-color: #f2f2f2}
+            button{
+                border-color: gray;
+                border-radius: 5px;
+                padding: 10px;
+            }
             #button1{
                 float:left; 
             }
