@@ -33,13 +33,17 @@
             }*/
             .fa-envelope-o{
                 /*background-image: url("../image/person.jpg");*/
-                font-size: 40px;
+                font-size:30px;
                 color: A9A9A9;
             }
             .fa-lock{
-                font-size: 45px;
+                font-size: 33px;
                 color: A9A9A9;
-                margin-right: 10px;
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+            checkbox{
+                margin-left: 30px;
             }
         </style>
         <script>
@@ -52,12 +56,6 @@
                 if (el.value == el.defaultValue) {
                     el.value = '';
                 }
-            }
-            function makeItPassword()
-            {
-               document.getElementById("passcontainer")
-                  .innerHTML = "<input id=\"password\" name=\"password\" type=\"password\"/>";
-               document.getElementById("password").focus();
             }
             
         </script>
@@ -81,13 +79,14 @@
 <!--                <label>Email:</label>-->
 <!--                <spam id="email"></spam>-->
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                <input type="text" name='email' value="Email" onblur="onBlur(this)" onfocus="onFocus(this)" />
+                <input type="text" name='email' placeholder="Email"  onblur="onBlur(this)" onfocus="onFocus(this)" />
             </fieldset>
             <fieldset class="form-group">
-<!--                <label>Password:</label>-->
-<!--                <span id="passcontainer">-->
-                    <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input id="password" onfocus="return makeItPassword()" name="passw" type="text" value="Password" />
+ <!--                <label>Password:</label>-->
+              <i class="fa fa-lock" aria-hidden="true"></i>
+              <span id="passcontainer">                    
+                  <input id="passw" placeholder="Password" name="passw" type="password"  />
+              </span>
             </fieldset>
             <fieldset class="form-group">
                 <input type="submit" name="submit" value="Login">
